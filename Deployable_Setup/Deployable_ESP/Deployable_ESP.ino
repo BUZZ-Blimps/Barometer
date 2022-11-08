@@ -1,8 +1,8 @@
 #include "UDPComm.h"
 //#include <SoftwareSerial.h> //Imported EspSoftwareSerial library by Dirk Kaar - https://github.com/plerup/espsoftwareserial/
 
-#define RXD2 16
-#define TXD2 17
+#define RXD2 16 //black
+#define TXD2 17 //blue
 
 UDPComm udp;
 
@@ -11,10 +11,11 @@ String msg = "";
 void setup(){
     
   Serial.begin(115200);
-  Serial2.begin(115200, SERIAL_8N1, RXD2, TXD2);
   
   udp.init();
   udp.establishComm();
+  
+  Serial2.begin(115200, SERIAL_8N1, RXD2, TXD2);
 }
 
 void loop(){

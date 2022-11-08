@@ -110,6 +110,8 @@ bool UDPComm::readPacket(String* packet){
         *packet = input;
     }else {
         *packet = "";
+        Serial.print("Invalid UDP Message: ");
+        Serial.println(input);
     }
     return true;
 }
@@ -118,6 +120,8 @@ void UDPComm::readPackets() {
     String packet = "";
     while (readPacket(&packet)) {
         if (packet == "") continue; //If invalid message, skip it
+        Serial.print("Received: ");
+        Serial.println(packet);
 
         String flag = packetGetFlag(packet);
         flag.trim();
