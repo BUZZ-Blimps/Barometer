@@ -1,0 +1,8 @@
+source;share/barometer/hook/cmake_prefix_path.ps1
+source;share/barometer/hook/cmake_prefix_path.dsv
+source;share/barometer/hook/cmake_prefix_path.sh
+source;share/barometer/local_setup.bash
+source;share/barometer/local_setup.dsv
+source;share/barometer/local_setup.ps1
+source;share/barometer/local_setup.sh
+source;share/barometer/local_setup.zsh

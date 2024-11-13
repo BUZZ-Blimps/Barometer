@@ -1,0 +1,2 @@
+source;share/barometer/environment/ament_prefix_path.sh
+source;share/barometer/environment/path.sh

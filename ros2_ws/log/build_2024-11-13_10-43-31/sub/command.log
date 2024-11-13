@@ -1,0 +1,4 @@
+Invoking command in '/home/opi/GitHub/Barometer/ros2_ws/build/sub': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/opi/GitHub/Barometer/ros2_ws/build/sub -- -j8 -l8
+Invoked command in '/home/opi/GitHub/Barometer/ros2_ws/build/sub' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/opi/GitHub/Barometer/ros2_ws/build/sub -- -j8 -l8
+Invoking command in '/home/opi/GitHub/Barometer/ros2_ws/build/sub': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/opi/GitHub/Barometer/ros2_ws/build/sub
+Invoked command in '/home/opi/GitHub/Barometer/ros2_ws/build/sub' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/opi/GitHub/Barometer/ros2_ws/build/sub

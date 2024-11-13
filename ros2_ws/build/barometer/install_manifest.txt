@@ -1,0 +1,16 @@
+/home/opi/GitHub/Barometer/ros2_ws/install/barometer/lib/barometer/talker
+/home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/ament_index/resource_index/package_run_dependencies/barometer
+/home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/ament_index/resource_index/parent_prefix_path/barometer
+/home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/environment/ament_prefix_path.sh
+/home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/environment/ament_prefix_path.dsv
+/home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/environment/path.sh
+/home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/environment/path.dsv
+/home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/local_setup.bash
+/home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/local_setup.sh
+/home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/local_setup.zsh
+/home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/local_setup.dsv
+/home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/package.dsv
+/home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/ament_index/resource_index/packages/barometer
+/home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/cmake/barometerConfig.cmake
+/home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/cmake/barometerConfig-version.cmake
+/home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/package.xml

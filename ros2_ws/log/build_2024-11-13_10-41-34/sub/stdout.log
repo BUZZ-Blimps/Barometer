@@ -1,0 +1,20 @@
+[35m[1mConsolidate compiler generated dependencies of target listener[0m
+[100%] Built target listener
+-- Install configuration: ""
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/lib/sub/listener
+-- Set runtime path of "/home/opi/GitHub/Barometer/ros2_ws/install/sub/lib/sub/listener" to ""
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/ament_index/resource_index/package_run_dependencies/sub
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/ament_index/resource_index/parent_prefix_path/sub
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/sub/environment/ament_prefix_path.sh
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/sub/environment/ament_prefix_path.dsv
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/sub/environment/path.sh
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/sub/environment/path.dsv
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/sub/local_setup.bash
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/sub/local_setup.sh
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/sub/local_setup.zsh
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/sub/local_setup.dsv
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/sub/package.dsv
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/ament_index/resource_index/packages/sub
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/sub/cmake/subConfig.cmake
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/sub/cmake/subConfig-version.cmake
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/sub/package.xml

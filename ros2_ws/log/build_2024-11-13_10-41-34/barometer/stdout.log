@@ -1,0 +1,22 @@
+[35m[1mConsolidate compiler generated dependencies of target talker[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/talker.dir/src/baropublisher.cpp.o[0m
+[ 66%] [32m[1mLinking CXX executable talker[0m
+[100%] Built target talker
+-- Install configuration: ""
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/lib/barometer/talker
+-- Set runtime path of "/home/opi/GitHub/Barometer/ros2_ws/install/barometer/lib/barometer/talker" to ""
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/ament_index/resource_index/package_run_dependencies/barometer
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/ament_index/resource_index/parent_prefix_path/barometer
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/environment/ament_prefix_path.sh
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/environment/ament_prefix_path.dsv
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/environment/path.sh
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/environment/path.dsv
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/local_setup.bash
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/local_setup.sh
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/local_setup.zsh
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/local_setup.dsv
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/package.dsv
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/ament_index/resource_index/packages/barometer
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/cmake/barometerConfig.cmake
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/cmake/barometerConfig-version.cmake
+-- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/package.xml

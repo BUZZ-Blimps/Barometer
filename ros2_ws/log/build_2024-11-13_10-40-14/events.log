@@ -1,0 +1,295 @@
+[0.000000] (-) TimerEvent: {}
+[0.000525] (barometer) JobQueued: {'identifier': 'barometer', 'dependencies': OrderedDict()}
+[0.000668] (sub) JobQueued: {'identifier': 'sub', 'dependencies': OrderedDict()}
+[0.001029] (barometer) JobStarted: {'identifier': 'barometer'}
+[0.007232] (sub) JobStarted: {'identifier': 'sub'}
+[0.013196] (barometer) JobProgress: {'identifier': 'barometer', 'progress': 'cmake'}
+[0.013567] (barometer) Command: {'cmd': ['/usr/bin/cmake', '/home/opi/GitHub/Barometer/ros2_ws/src/barometer', '-DCMAKE_INSTALL_PREFIX=/home/opi/GitHub/Barometer/ros2_ws/install/barometer'], 'cwd': '/home/opi/GitHub/Barometer/ros2_ws/build/barometer', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'opi'), ('SSH_CLIENT', '192.168.0.204 54936 22'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/opi/microros_ws/install/micro_ros_agent/lib:/home/opi/microros_ws/install/micro_ros_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/opi'), ('MUTTER_DEBUG_ENABLE_ATOMIC_KMS', '0'), ('OLDPWD', '/home/opi/GitHub/Barometer/ros2_ws/src'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1001/bus'), ('COLCON_PREFIX_PATH', '/home/opi/microros_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'opi'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '4'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1001'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '1'), ('AMENT_PREFIX_PATH', '/home/opi/microros_ws/install/micro_ros_setup:/home/opi/microros_ws/install/micro_ros_agent:/home/opi/microros_ws/install/micro_ros_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('CLUTTER_PAINT', 'disable-dynamic-max-render-time'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('MUTTER_DEBUG_FORCE_KMS_MODE', 'simple'), ('PWD', '/home/opi/GitHub/Barometer/ros2_ws/build/barometer'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.0.204 54936 192.168.0.102 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/opi/microros_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/opi/microros_ws/install/micro_ros_setup:/home/opi/microros_ws/install/micro_ros_agent:/home/opi/microros_ws/install/micro_ros_msgs:/opt/ros/humble')]), 'shell': False}
+[0.018830] (sub) JobProgress: {'identifier': 'sub', 'progress': 'cmake'}
+[0.019228] (sub) Command: {'cmd': ['/usr/bin/cmake', '/home/opi/GitHub/Barometer/ros2_ws/src/sub', '-DCMAKE_INSTALL_PREFIX=/home/opi/GitHub/Barometer/ros2_ws/install/sub'], 'cwd': '/home/opi/GitHub/Barometer/ros2_ws/build/sub', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'opi'), ('SSH_CLIENT', '192.168.0.204 54936 22'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/opi/microros_ws/install/micro_ros_agent/lib:/home/opi/microros_ws/install/micro_ros_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/opi'), ('MUTTER_DEBUG_ENABLE_ATOMIC_KMS', '0'), ('OLDPWD', '/home/opi/GitHub/Barometer/ros2_ws/src'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1001/bus'), ('COLCON_PREFIX_PATH', '/home/opi/microros_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'opi'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '4'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1001'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '1'), ('AMENT_PREFIX_PATH', '/home/opi/microros_ws/install/micro_ros_setup:/home/opi/microros_ws/install/micro_ros_agent:/home/opi/microros_ws/install/micro_ros_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('CLUTTER_PAINT', 'disable-dynamic-max-render-time'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('MUTTER_DEBUG_FORCE_KMS_MODE', 'simple'), ('PWD', '/home/opi/GitHub/Barometer/ros2_ws/build/sub'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.0.204 54936 192.168.0.102 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/opi/microros_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/opi/microros_ws/install/micro_ros_setup:/home/opi/microros_ws/install/micro_ros_agent:/home/opi/microros_ws/install/micro_ros_msgs:/opt/ros/humble')]), 'shell': False}
+[0.098483] (-) TimerEvent: {}
+[0.151646] (barometer) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.173737] (sub) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.198551] (-) TimerEvent: {}
+[0.268331] (barometer) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.290551] (sub) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.293877] (barometer) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.298612] (-) TimerEvent: {}
+[0.313791] (sub) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.398704] (-) TimerEvent: {}
+[0.491430] (barometer) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.498776] (-) TimerEvent: {}
+[0.501459] (barometer) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.502019] (barometer) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.502491] (barometer) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.506210] (barometer) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.526877] (sub) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.536705] (sub) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.537293] (sub) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.537748] (sub) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.541338] (sub) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.598997] (-) TimerEvent: {}
+[0.695824] (barometer) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.699108] (-) TimerEvent: {}
+[0.706095] (barometer) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.706715] (barometer) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.707206] (barometer) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.710705] (barometer) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.738866] (sub) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.767262] (sub) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.768175] (sub) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.770222] (sub) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.775233] (sub) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.799390] (-) TimerEvent: {}
+[0.900170] (-) TimerEvent: {}
+[1.000930] (-) TimerEvent: {}
+[1.024961] (barometer) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[1.083365] (sub) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[1.101086] (-) TimerEvent: {}
+[1.169546] (barometer) StdoutLine: {'line': b'-- Found rclcpp: 16.0.10 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[1.201326] (-) TimerEvent: {}
+[1.224590] (barometer) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[1.230962] (barometer) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[1.241566] (barometer) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[1.251512] (sub) StdoutLine: {'line': b'-- Found rclcpp: 16.0.10 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[1.257636] (barometer) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.278814] (barometer) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.301534] (-) TimerEvent: {}
+[1.305530] (sub) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[1.312001] (sub) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[1.322792] (sub) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[1.336981] (barometer) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[1.338560] (sub) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.340286] (barometer) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[1.359809] (sub) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.401769] (-) TimerEvent: {}
+[1.418403] (sub) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[1.421720] (sub) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[1.501973] (-) TimerEvent: {}
+[1.507653] (barometer) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[1.548453] (barometer) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[1.581600] (sub) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[1.602214] (-) TimerEvent: {}
+[1.609368] (barometer) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.619931] (barometer) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[1.622129] (sub) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[1.683580] (sub) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.694056] (sub) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[1.702490] (-) TimerEvent: {}
+[1.803265] (-) TimerEvent: {}
+[1.813857] (barometer) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[1.814480] (barometer) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[1.900598] (sub) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[1.901301] (sub) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[1.903333] (-) TimerEvent: {}
+[2.003959] (-) TimerEvent: {}
+[2.037129] (barometer) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[2.040980] (barometer) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[2.104227] (-) TimerEvent: {}
+[2.119106] (sub) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[2.119748] (sub) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[2.204455] (-) TimerEvent: {}
+[2.221522] (sub) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[2.247969] (barometer) StdoutLine: {'line': b'-- Configuring done\n'}
+[2.260674] (barometer) StdoutLine: {'line': b'-- Generating done\n'}
+[2.262987] (barometer) StdoutLine: {'line': b'-- Build files have been written to: /home/opi/GitHub/Barometer/ros2_ws/build/barometer\n'}
+[2.280257] (barometer) CommandEnded: {'returncode': 0}
+[2.283960] (barometer) JobProgress: {'identifier': 'barometer', 'progress': 'build'}
+[2.284116] (barometer) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/opi/GitHub/Barometer/ros2_ws/build/barometer', '--', '-j8', '-l8'], 'cwd': '/home/opi/GitHub/Barometer/ros2_ws/build/barometer', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'opi'), ('SSH_CLIENT', '192.168.0.204 54936 22'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/opi/microros_ws/install/micro_ros_agent/lib:/home/opi/microros_ws/install/micro_ros_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/opi'), ('MUTTER_DEBUG_ENABLE_ATOMIC_KMS', '0'), ('OLDPWD', '/home/opi/GitHub/Barometer/ros2_ws/src'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1001/bus'), ('COLCON_PREFIX_PATH', '/home/opi/microros_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'opi'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '4'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1001'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '1'), ('AMENT_PREFIX_PATH', '/home/opi/microros_ws/install/micro_ros_setup:/home/opi/microros_ws/install/micro_ros_agent:/home/opi/microros_ws/install/micro_ros_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('CLUTTER_PAINT', 'disable-dynamic-max-render-time'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('MUTTER_DEBUG_FORCE_KMS_MODE', 'simple'), ('PWD', '/home/opi/GitHub/Barometer/ros2_ws/build/barometer'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.0.204 54936 192.168.0.102 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/opi/microros_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/opi/microros_ws/install/micro_ros_setup:/home/opi/microros_ws/install/micro_ros_agent:/home/opi/microros_ws/install/micro_ros_msgs:/opt/ros/humble')]), 'shell': False}
+[2.304674] (-) TimerEvent: {}
+[2.345971] (sub) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[2.347258] (sub) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[2.348066] (sub) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[2.348160] (sub) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[2.349128] (sub) StdoutLine: {'line': b"-- Added test 'cpplint' to check C / C++ code against the Google style\n"}
+[2.349216] (sub) StdoutLine: {'line': b'-- Configured cpplint exclude dirs and/or files: \n'}
+[2.349930] (sub) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[2.351053] (sub) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[2.351135] (sub) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[2.351632] (sub) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[2.353124] (sub) StdoutLine: {'line': b'-- Configuring done\n'}
+[2.365198] (sub) StdoutLine: {'line': b'-- Generating done\n'}
+[2.367507] (sub) StdoutLine: {'line': b'-- Build files have been written to: /home/opi/GitHub/Barometer/ros2_ws/build/sub\n'}
+[2.384381] (sub) CommandEnded: {'returncode': 0}
+[2.384843] (sub) JobProgress: {'identifier': 'sub', 'progress': 'build'}
+[2.384877] (sub) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/opi/GitHub/Barometer/ros2_ws/build/sub', '--', '-j8', '-l8'], 'cwd': '/home/opi/GitHub/Barometer/ros2_ws/build/sub', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'opi'), ('SSH_CLIENT', '192.168.0.204 54936 22'), ('XDG_SESSION_TYPE', 'tty'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/opi/microros_ws/install/micro_ros_agent/lib:/home/opi/microros_ws/install/micro_ros_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/opi'), ('MUTTER_DEBUG_ENABLE_ATOMIC_KMS', '0'), ('OLDPWD', '/home/opi/GitHub/Barometer/ros2_ws/src'), ('SSH_TTY', '/dev/pts/0'), ('ROS_PYTHON_VERSION', '3'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1001/bus'), ('COLCON_PREFIX_PATH', '/home/opi/microros_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'opi'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '4'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1001'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('ROS_DOMAIN_ID', '1'), ('AMENT_PREFIX_PATH', '/home/opi/microros_ws/install/micro_ros_setup:/home/opi/microros_ws/install/micro_ros_agent:/home/opi/microros_ws/install/micro_ros_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('CLUTTER_PAINT', 'disable-dynamic-max-render-time'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('MUTTER_DEBUG_FORCE_KMS_MODE', 'simple'), ('PWD', '/home/opi/GitHub/Barometer/ros2_ws/build/sub'), ('LC_ALL', 'en_US.UTF-8'), ('SSH_CONNECTION', '192.168.0.204 54936 192.168.0.102 22'), ('XDG_DATA_DIRS', '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/opi/microros_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/opi/microros_ws/install/micro_ros_setup:/home/opi/microros_ws/install/micro_ros_agent:/home/opi/microros_ws/install/micro_ros_msgs:/opt/ros/humble')]), 'shell': False}
+[2.404771] (-) TimerEvent: {}
+[2.416479] (barometer) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/talker.dir/src/OPI_IMU.cpp.o\x1b[0m\n'}
+[2.429648] (barometer) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/talker.dir/src/baropublisher.cpp.o\x1b[0m\n'}
+[2.504898] (-) TimerEvent: {}
+[2.541193] (sub) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/listener.dir/src/barosubscriber.cpp.o\x1b[0m\n'}
+[2.604994] (-) TimerEvent: {}
+[2.705333] (-) TimerEvent: {}
+[2.805683] (-) TimerEvent: {}
+[2.906033] (-) TimerEvent: {}
+[3.006315] (-) TimerEvent: {}
+[3.106572] (-) TimerEvent: {}
+[3.206849] (-) TimerEvent: {}
+[3.307129] (-) TimerEvent: {}
+[3.407441] (-) TimerEvent: {}
+[3.507712] (-) TimerEvent: {}
+[3.607984] (-) TimerEvent: {}
+[3.708249] (-) TimerEvent: {}
+[3.808515] (-) TimerEvent: {}
+[3.908785] (-) TimerEvent: {}
+[4.009031] (-) TimerEvent: {}
+[4.109278] (-) TimerEvent: {}
+[4.209545] (-) TimerEvent: {}
+[4.309795] (-) TimerEvent: {}
+[4.410087] (-) TimerEvent: {}
+[4.510364] (-) TimerEvent: {}
+[4.610628] (-) TimerEvent: {}
+[4.710858] (-) TimerEvent: {}
+[4.811129] (-) TimerEvent: {}
+[4.911519] (-) TimerEvent: {}
+[5.011875] (-) TimerEvent: {}
+[5.112176] (-) TimerEvent: {}
+[5.212476] (-) TimerEvent: {}
+[5.312741] (-) TimerEvent: {}
+[5.413018] (-) TimerEvent: {}
+[5.513275] (-) TimerEvent: {}
+[5.613532] (-) TimerEvent: {}
+[5.713776] (-) TimerEvent: {}
+[5.779024] (barometer) StderrLine: {'line': b'\x1b[01m\x1b[K/home/opi/GitHub/Barometer/ros2_ws/src/barometer/src/baropublisher.cpp:41:42:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KString\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kstd_msgs::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[5.779279] (barometer) StderrLine: {'line': b'   41 |         rclcpp::Publisher<std_msgs::msg::\x1b[01;31m\x1b[KString\x1b[m\x1b[K>:: SharedPtr publisher_;\n'}
+[5.779369] (barometer) StderrLine: {'line': b'      |                                          \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[5.779447] (barometer) StderrLine: {'line': b'\x1b[01m\x1b[K/home/opi/GitHub/Barometer/ros2_ws/src/barometer/src/baropublisher.cpp:41:48:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[5.779523] (barometer) StderrLine: {'line': b'   41 |         rclcpp::Publisher<std_msgs::msg::String\x1b[01;31m\x1b[K>\x1b[m\x1b[K:: SharedPtr publisher_;\n'}
+[5.779594] (barometer) StderrLine: {'line': b'      |                                                \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[5.779664] (barometer) StderrLine: {'line': b'\x1b[01m\x1b[K/home/opi/GitHub/Barometer/ros2_ws/src/barometer/src/baropublisher.cpp:41:52:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected \xe2\x80\x98\x1b[01m\x1b[K;\x1b[m\x1b[K\xe2\x80\x99 at end of member declaration\n'}
+[5.779737] (barometer) StderrLine: {'line': b'   41 |         rclcpp::Publisher<std_msgs::msg::String>:: \x1b[01;31m\x1b[KSharedPtr\x1b[m\x1b[K publisher_;\n'}
+[5.779821] (barometer) StderrLine: {'line': b'      |                                                    \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[5.779894] (barometer) StderrLine: {'line': b'      |                                                             \x1b[32m\x1b[K;\x1b[m\x1b[K\n'}
+[5.782625] (barometer) StderrLine: {'line': b'\x1b[01m\x1b[K/home/opi/GitHub/Barometer/ros2_ws/src/barometer/src/baropublisher.cpp:41:62:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpublisher_\x1b[m\x1b[K\xe2\x80\x99 does not name a type; did you mean \xe2\x80\x98\x1b[01m\x1b[Kbaropublisher\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.782748] (barometer) StderrLine: {'line': b'   41 |         rclcpp::Publisher<std_msgs::msg::String>:: SharedPtr \x1b[01;31m\x1b[Kpublisher_\x1b[m\x1b[K;\n'}
+[5.782822] (barometer) StderrLine: {'line': b'      |                                                              \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.782912] (barometer) StderrLine: {'line': b'      |                                                              \x1b[32m\x1b[Kbaropublisher\x1b[m\x1b[K\n'}
+[5.794821] (barometer) StderrLine: {'line': b'\x1b[01m\x1b[K/home/opi/GitHub/Barometer/ros2_ws/src/barometer/src/baropublisher.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[Kbaropublisher::baropublisher()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.794946] (barometer) StderrLine: {'line': b'\x1b[01m\x1b[K/home/opi/GitHub/Barometer/ros2_ws/src/barometer/src/baropublisher.cpp:24:25:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpublisher_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kbaropublisher\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.795023] (barometer) StderrLine: {'line': b'   24 |                         \x1b[01;31m\x1b[Kpublisher_\x1b[m\x1b[K = this->create_publisher<std_msgs::msg::Float64>("/Barometer/reading",10);\n'}
+[5.795114] (barometer) StderrLine: {'line': b'      |                         \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.795185] (barometer) StderrLine: {'line': b'      |                         \x1b[32m\x1b[Kbaropublisher\x1b[m\x1b[K\n'}
+[5.813851] (-) TimerEvent: {}
+[5.815980] (barometer) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24\x1b[m\x1b[K,\n'}
+[5.816163] (barometer) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40\x1b[m\x1b[K,\n'}
+[5.816238] (barometer) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[5.816311] (barometer) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K,\n'}
+[5.816381] (barometer) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[5.816450] (barometer) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[5.816520] (barometer) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20\x1b[m\x1b[K,\n'}
+[5.816588] (barometer) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37\x1b[m\x1b[K,\n'}
+[5.816657] (barometer) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[5.816727] (barometer) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[5.816796] (barometer) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155\x1b[m\x1b[K,\n'}
+[5.816864] (barometer) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/opi/GitHub/Barometer/ros2_ws/src/barometer/src/baropublisher.cpp:10\x1b[m\x1b[K:\n'}
+[5.816934] (barometer) StderrLine: {'line': b'\x1b[01m\x1b[K/home/opi/GitHub/Barometer/ros2_ws/src/barometer/src/baropublisher.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid baropublisher::timer_callback()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.817006] (barometer) StderrLine: {'line': b'\x1b[01m\x1b[K/home/opi/GitHub/Barometer/ros2_ws/src/barometer/src/baropublisher.cpp:36:57:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kformat \xe2\x80\x98\x1b[01m\x1b[K%s\x1b[m\x1b[K\xe2\x80\x99 expects argument of type \xe2\x80\x98\x1b[01m\x1b[Kchar*\x1b[m\x1b[K\xe2\x80\x99, but argument 5 has type \xe2\x80\x98\x1b[01m\x1b[Kstd_msgs::msg::Float64_<std::allocator<void> >::_data_type\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kdouble\x1b[m\x1b[K\xe2\x80\x99} [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=\x07-Wformat=\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[5.817114] (barometer) StderrLine: {'line': b'   36 |                         RCLCPP_INFO(this->get_logger(), \x1b[01;35m\x1b[K"Publishing: \'%s\'"\x1b[m\x1b[K, \x1b[32m\x1b[Kmessage.data\x1b[m\x1b[K);\n'}
+[5.817200] (barometer) StderrLine: {'line': b'      |                                                         \x1b[01;35m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K  \x1b[32m\x1b[K~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.817272] (barometer) StderrLine: {'line': b'      |                                                                                     \x1b[32m\x1b[K|\x1b[m\x1b[K\n'}
+[5.817342] (barometer) StderrLine: {'line': b'      |                                                                                     \x1b[32m\x1b[Kstd_msgs::msg::Float64_<std::allocator<void> >::_data_type {aka double}\x1b[m\x1b[K\n'}
+[5.817413] (barometer) StderrLine: {'line': b'\x1b[01m\x1b[K/home/opi/GitHub/Barometer/ros2_ws/src/barometer/src/baropublisher.cpp:36:72:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kformat string is defined here\n'}
+[5.817493] (barometer) StderrLine: {'line': b'   36 |                         RCLCPP_INFO(this->get_logger(), "Publishing: \'\x1b[01;36m\x1b[K%s\x1b[m\x1b[K\'", message.data);\n'}
+[5.817564] (barometer) StderrLine: {'line': b'      |                                                                       \x1b[01;36m\x1b[K~^\x1b[m\x1b[K\n'}
+[5.817633] (barometer) StderrLine: {'line': b'      |                                                                        \x1b[01;36m\x1b[K|\x1b[m\x1b[K\n'}
+[5.817703] (barometer) StderrLine: {'line': b'      |                                                                        \x1b[01;36m\x1b[Kchar*\x1b[m\x1b[K\n'}
+[5.817772] (barometer) StderrLine: {'line': b'      |                                                                       \x1b[32m\x1b[K%f\x1b[m\x1b[K\n'}
+[5.826986] (barometer) StderrLine: {'line': b'\x1b[01m\x1b[K/home/opi/GitHub/Barometer/ros2_ws/src/barometer/src/baropublisher.cpp:37:25:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kpublisher_\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kbaropublisher\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[5.827113] (barometer) StderrLine: {'line': b'   37 |                         \x1b[01;31m\x1b[Kpublisher_\x1b[m\x1b[K->publish(message);\n'}
+[5.827185] (barometer) StderrLine: {'line': b'      |                         \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.827255] (barometer) StderrLine: {'line': b'      |                         \x1b[32m\x1b[Kbaropublisher\x1b[m\x1b[K\n'}
+[5.913931] (-) TimerEvent: {}
+[6.014203] (-) TimerEvent: {}
+[6.114447] (-) TimerEvent: {}
+[6.214687] (-) TimerEvent: {}
+[6.314935] (-) TimerEvent: {}
+[6.415213] (-) TimerEvent: {}
+[6.515468] (-) TimerEvent: {}
+[6.615703] (-) TimerEvent: {}
+[6.715936] (-) TimerEvent: {}
+[6.804919] (barometer) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/talker.dir/build.make:76: CMakeFiles/talker.dir/src/baropublisher.cpp.o] Error 1\n'}
+[6.805576] (barometer) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/talker.dir/all] Error 2\n'}
+[6.806056] (barometer) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[6.809073] (barometer) CommandEnded: {'returncode': 2}
+[6.816028] (-) TimerEvent: {}
+[6.893264] (barometer) JobEnded: {'identifier': 'barometer', 'rc': 2}
+[6.916120] (-) TimerEvent: {}
+[7.016425] (-) TimerEvent: {}
+[7.116702] (-) TimerEvent: {}
+[7.216964] (-) TimerEvent: {}
+[7.317179] (-) TimerEvent: {}
+[7.417383] (-) TimerEvent: {}
+[7.517577] (-) TimerEvent: {}
+[7.617767] (-) TimerEvent: {}
+[7.717958] (-) TimerEvent: {}
+[7.818151] (-) TimerEvent: {}
+[7.918344] (-) TimerEvent: {}
+[8.018537] (-) TimerEvent: {}
+[8.118725] (-) TimerEvent: {}
+[8.218942] (-) TimerEvent: {}
+[8.319138] (-) TimerEvent: {}
+[8.419333] (-) TimerEvent: {}
+[8.519532] (-) TimerEvent: {}
+[8.619726] (-) TimerEvent: {}
+[8.719912] (-) TimerEvent: {}
+[8.820104] (-) TimerEvent: {}
+[8.920332] (-) TimerEvent: {}
+[9.020531] (-) TimerEvent: {}
+[9.120724] (-) TimerEvent: {}
+[9.220914] (-) TimerEvent: {}
+[9.321107] (-) TimerEvent: {}
+[9.421298] (-) TimerEvent: {}
+[9.521487] (-) TimerEvent: {}
+[9.621673] (-) TimerEvent: {}
+[9.721868] (-) TimerEvent: {}
+[9.822041] (-) TimerEvent: {}
+[9.922229] (-) TimerEvent: {}
+[10.022416] (-) TimerEvent: {}
+[10.122598] (-) TimerEvent: {}
+[10.222776] (-) TimerEvent: {}
+[10.322952] (-) TimerEvent: {}
+[10.423124] (-) TimerEvent: {}
+[10.523300] (-) TimerEvent: {}
+[10.623477] (-) TimerEvent: {}
+[10.723654] (-) TimerEvent: {}
+[10.823827] (-) TimerEvent: {}
+[10.924002] (-) TimerEvent: {}
+[11.024177] (-) TimerEvent: {}
+[11.124351] (-) TimerEvent: {}
+[11.224528] (-) TimerEvent: {}
+[11.324702] (-) TimerEvent: {}
+[11.424879] (-) TimerEvent: {}
+[11.525056] (-) TimerEvent: {}
+[11.625231] (-) TimerEvent: {}
+[11.725405] (-) TimerEvent: {}
+[11.825607] (-) TimerEvent: {}
+[11.925787] (-) TimerEvent: {}
+[12.025960] (-) TimerEvent: {}
+[12.126134] (-) TimerEvent: {}
+[12.226308] (-) TimerEvent: {}
+[12.326482] (-) TimerEvent: {}
+[12.426659] (-) TimerEvent: {}
+[12.526832] (-) TimerEvent: {}
+[12.627004] (-) TimerEvent: {}
+[12.727188] (-) TimerEvent: {}
+[12.827453] (-) TimerEvent: {}
+[12.927713] (-) TimerEvent: {}
+[13.027925] (-) TimerEvent: {}
+[13.128123] (-) TimerEvent: {}
+[13.228315] (-) TimerEvent: {}
+[13.328502] (-) TimerEvent: {}
+[13.428698] (-) TimerEvent: {}
+[13.528922] (-) TimerEvent: {}
+[13.629128] (-) TimerEvent: {}
+[13.729339] (-) TimerEvent: {}
+[13.749535] (sub) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable listener\x1b[0m\n'}
+[13.829437] (-) TimerEvent: {}
+[13.929770] (-) TimerEvent: {}
+[14.030043] (-) TimerEvent: {}
+[14.130324] (-) TimerEvent: {}
+[14.230544] (-) TimerEvent: {}
+[14.330739] (-) TimerEvent: {}
+[14.423065] (sub) StdoutLine: {'line': b'[100%] Built target listener\n'}
+[14.430847] (-) TimerEvent: {}
+[14.456290] (sub) JobEnded: {'identifier': 'sub', 'rc': 'SIGINT'}
+[14.467670] (-) EventReactorShutdown: {}

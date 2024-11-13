@@ -1,0 +1,50 @@
+[01m[K/home/opi/GitHub/Barometer/ros2_ws/src/barometer/src/baropublisher.cpp:41:42:[m[K [01;31m[Kerror: [m[K‘[01m[KString[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’
+   41 |         rclcpp::Publisher<std_msgs::msg::[01;31m[KString[m[K>:: SharedPtr publisher_;
+      |                                          [01;31m[K^~~~~~[m[K
+[01m[K/home/opi/GitHub/Barometer/ros2_ws/src/barometer/src/baropublisher.cpp:41:48:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   41 |         rclcpp::Publisher<std_msgs::msg::String[01;31m[K>[m[K:: SharedPtr publisher_;
+      |                                                [01;31m[K^[m[K
+[01m[K/home/opi/GitHub/Barometer/ros2_ws/src/barometer/src/baropublisher.cpp:41:52:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   41 |         rclcpp::Publisher<std_msgs::msg::String>:: [01;31m[KSharedPtr[m[K publisher_;
+      |                                                    [01;31m[K^~~~~~~~~[m[K
+      |                                                             [32m[K;[m[K
+[01m[K/home/opi/GitHub/Barometer/ros2_ws/src/barometer/src/baropublisher.cpp:41:62:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublisher_[m[K’ does not name a type; did you mean ‘[01m[Kbaropublisher[m[K’?
+   41 |         rclcpp::Publisher<std_msgs::msg::String>:: SharedPtr [01;31m[Kpublisher_[m[K;
+      |                                                              [01;31m[K^~~~~~~~~~[m[K
+      |                                                              [32m[Kbaropublisher[m[K
+[01m[K/home/opi/GitHub/Barometer/ros2_ws/src/barometer/src/baropublisher.cpp:[m[K In constructor ‘[01m[Kbaropublisher::baropublisher()[m[K’:
+[01m[K/home/opi/GitHub/Barometer/ros2_ws/src/barometer/src/baropublisher.cpp:24:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublisher_[m[K’ was not declared in this scope; did you mean ‘[01m[Kbaropublisher[m[K’?
+   24 |                         [01;31m[Kpublisher_[m[K = this->create_publisher<std_msgs::msg::Float64>("/Barometer/reading",10);
+      |                         [01;31m[K^~~~~~~~~~[m[K
+      |                         [32m[Kbaropublisher[m[K
+In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/opi/GitHub/Barometer/ros2_ws/src/barometer/src/baropublisher.cpp:10[m[K:
+[01m[K/home/opi/GitHub/Barometer/ros2_ws/src/barometer/src/baropublisher.cpp:[m[K In member function ‘[01m[Kvoid baropublisher::timer_callback()[m[K’:
+[01m[K/home/opi/GitHub/Barometer/ros2_ws/src/barometer/src/baropublisher.cpp:36:57:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%s[m[K’ expects argument of type ‘[01m[Kchar*[m[K’, but argument 5 has type ‘[01m[Kstd_msgs::msg::Float64_<std::allocator<void> >::_data_type[m[K’ {aka ‘[01m[Kdouble[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+   36 |                         RCLCPP_INFO(this->get_logger(), [01;35m[K"Publishing: '%s'"[m[K, [32m[Kmessage.data[m[K);
+      |                                                         [01;35m[K^~~~~~~~~~~~~~~~~~[m[K  [32m[K~~~~~~~~~~~~[m[K
+      |                                                                                     [32m[K|[m[K
+      |                                                                                     [32m[Kstd_msgs::msg::Float64_<std::allocator<void> >::_data_type {aka double}[m[K
+[01m[K/home/opi/GitHub/Barometer/ros2_ws/src/barometer/src/baropublisher.cpp:36:72:[m[K [01;36m[Knote: [m[Kformat string is defined here
+   36 |                         RCLCPP_INFO(this->get_logger(), "Publishing: '[01;36m[K%s[m[K'", message.data);
+      |                                                                       [01;36m[K~^[m[K
+      |                                                                        [01;36m[K|[m[K
+      |                                                                        [01;36m[Kchar*[m[K
+      |                                                                       [32m[K%f[m[K
+[01m[K/home/opi/GitHub/Barometer/ros2_ws/src/barometer/src/baropublisher.cpp:37:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kpublisher_[m[K’ was not declared in this scope; did you mean ‘[01m[Kbaropublisher[m[K’?
+   37 |                         [01;31m[Kpublisher_[m[K->publish(message);
+      |                         [01;31m[K^~~~~~~~~~[m[K
+      |                         [32m[Kbaropublisher[m[K
+gmake[2]: *** [CMakeFiles/talker.dir/build.make:76: CMakeFiles/talker.dir/src/baropublisher.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/talker.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

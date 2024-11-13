@@ -1,0 +1,24 @@
+[0.016s] Invoking command in '/home/opi/GitHub/Barometer/ros2_ws/build/sub': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/opi/GitHub/Barometer/ros2_ws/build/sub -- -j8 -l8
+[0.130s] [35m[1mConsolidate compiler generated dependencies of target listener[0m
+[0.193s] [100%] Built target listener
+[0.223s] Invoked command in '/home/opi/GitHub/Barometer/ros2_ws/build/sub' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/opi/GitHub/Barometer/ros2_ws/build/sub -- -j8 -l8
+[0.318s] Invoking command in '/home/opi/GitHub/Barometer/ros2_ws/build/sub': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/opi/GitHub/Barometer/ros2_ws/build/sub
+[0.341s] -- Install configuration: ""
+[0.341s] -- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/lib/sub/listener
+[0.353s] -- Set runtime path of "/home/opi/GitHub/Barometer/ros2_ws/install/sub/lib/sub/listener" to ""
+[0.353s] -- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/ament_index/resource_index/package_run_dependencies/sub
+[0.353s] -- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/ament_index/resource_index/parent_prefix_path/sub
+[0.353s] -- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/sub/environment/ament_prefix_path.sh
+[0.354s] -- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/sub/environment/ament_prefix_path.dsv
+[0.354s] -- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/sub/environment/path.sh
+[0.354s] -- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/sub/environment/path.dsv
+[0.354s] -- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/sub/local_setup.bash
+[0.354s] -- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/sub/local_setup.sh
+[0.354s] -- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/sub/local_setup.zsh
+[0.355s] -- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/sub/local_setup.dsv
+[0.355s] -- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/sub/package.dsv
+[0.355s] -- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/ament_index/resource_index/packages/sub
+[0.355s] -- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/sub/cmake/subConfig.cmake
+[0.355s] -- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/sub/cmake/subConfig-version.cmake
+[0.355s] -- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/sub/share/sub/package.xml
+[0.358s] Invoked command in '/home/opi/GitHub/Barometer/ros2_ws/build/sub' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/opi/GitHub/Barometer/ros2_ws/build/sub

@@ -1,0 +1,26 @@
+[0.020s] Invoking command in '/home/opi/GitHub/Barometer/ros2_ws/build/barometer': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/opi/GitHub/Barometer/ros2_ws/build/barometer -- -j8 -l8
+[0.151s] [35m[1mConsolidate compiler generated dependencies of target talker[0m
+[0.206s] [ 33%] [32mBuilding CXX object CMakeFiles/talker.dir/src/baropublisher.cpp.o[0m
+[5.890s] [ 66%] [32m[1mLinking CXX executable talker[0m
+[6.241s] [100%] Built target talker
+[6.274s] Invoked command in '/home/opi/GitHub/Barometer/ros2_ws/build/barometer' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/opi/GitHub/Barometer/ros2_ws/build/barometer -- -j8 -l8
+[6.345s] Invoking command in '/home/opi/GitHub/Barometer/ros2_ws/build/barometer': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/opi/GitHub/Barometer/ros2_ws/build/barometer
+[6.369s] -- Install configuration: ""
+[6.369s] -- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/lib/barometer/talker
+[6.378s] -- Set runtime path of "/home/opi/GitHub/Barometer/ros2_ws/install/barometer/lib/barometer/talker" to ""
+[6.378s] -- Up-to-date: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/ament_index/resource_index/package_run_dependencies/barometer
+[6.378s] -- Up-to-date: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/ament_index/resource_index/parent_prefix_path/barometer
+[6.378s] -- Up-to-date: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/environment/ament_prefix_path.sh
+[6.378s] -- Up-to-date: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/environment/ament_prefix_path.dsv
+[6.378s] -- Up-to-date: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/environment/path.sh
+[6.379s] -- Up-to-date: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/environment/path.dsv
+[6.379s] -- Up-to-date: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/local_setup.bash
+[6.379s] -- Up-to-date: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/local_setup.sh
+[6.379s] -- Up-to-date: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/local_setup.zsh
+[6.379s] -- Up-to-date: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/local_setup.dsv
+[6.380s] -- Installing: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/package.dsv
+[6.381s] -- Up-to-date: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/ament_index/resource_index/packages/barometer
+[6.381s] -- Up-to-date: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/cmake/barometerConfig.cmake
+[6.381s] -- Up-to-date: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/cmake/barometerConfig-version.cmake
+[6.381s] -- Up-to-date: /home/opi/GitHub/Barometer/ros2_ws/install/barometer/share/barometer/package.xml
+[6.389s] Invoked command in '/home/opi/GitHub/Barometer/ros2_ws/build/barometer' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/opi/GitHub/Barometer/ros2_ws/build/barometer

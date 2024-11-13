@@ -1,0 +1,10 @@
+/home/opi/GitHub/Barometer/ros2_ws/build/barometer/CMakeFiles/uninstall.dir
+/home/opi/GitHub/Barometer/ros2_ws/build/barometer/CMakeFiles/barometer_uninstall.dir
+/home/opi/GitHub/Barometer/ros2_ws/build/barometer/CMakeFiles/talker.dir
+/home/opi/GitHub/Barometer/ros2_ws/build/barometer/CMakeFiles/test.dir
+/home/opi/GitHub/Barometer/ros2_ws/build/barometer/CMakeFiles/edit_cache.dir
+/home/opi/GitHub/Barometer/ros2_ws/build/barometer/CMakeFiles/rebuild_cache.dir
+/home/opi/GitHub/Barometer/ros2_ws/build/barometer/CMakeFiles/list_install_components.dir
+/home/opi/GitHub/Barometer/ros2_ws/build/barometer/CMakeFiles/install.dir
+/home/opi/GitHub/Barometer/ros2_ws/build/barometer/CMakeFiles/install/local.dir
+/home/opi/GitHub/Barometer/ros2_ws/build/barometer/CMakeFiles/install/strip.dir
