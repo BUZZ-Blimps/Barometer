@@ -34,7 +34,7 @@ class baropublisher : public rclcpp::Node
             auto message = std_msgs::msg::Float64();
             message.data = imu.pressRaw;
 
-            RCLCPP_INFO(this->get_logger(), "Publishing: '%f'", message.data);
+            // RCLCPP_INFO(this->get_logger(), "Publishing: '%f'", message.data);
             publisher_->publish(message);
         }
 

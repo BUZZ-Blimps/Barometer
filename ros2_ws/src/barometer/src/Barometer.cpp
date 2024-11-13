@@ -9,10 +9,8 @@ Barometer::Barometer() : Node("ground_baro_publisher") {
 
 void Barometer::timer_callback() {
     imu_.baro_read();
+    baro_msg_.data = imu_.pressRaw;
 
-    auto message = std_msgs::msg::Float64();
-    message.data = imu_.pressRaw;
-
-    RCLCPP_INFO(this->get_logger(), "Publishing: '%f'", message.data);
-    publisher_->publish(message);
+    // RCLCPP_INFO(this->get_logger(), "Publishing: '%f'", baro_msg_.data);
+    publisher_->publish(baro_msg_);
 }
