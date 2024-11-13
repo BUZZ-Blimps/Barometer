@@ -17,9 +17,7 @@ To save an ssh password for Orange Pi number #: ssh-copy-id opi@opi#
 #include <errno.h>
 #include <string.h>
 #include <stdbool.h>
-#include "LSM6DSL.h"
-#include "LIS3MDL.h"
-#include "BM388.h"
+
 #include <math.h>
 #include "eigen3/Eigen/Dense"
 // #include "BasicLinearAlgebra.h"
@@ -28,45 +26,45 @@ To save an ssh password for Orange Pi number #: ssh-copy-id opi@opi#
 #include <fcntl.h>
 #include <sys/ioctl.h>
 #include <asm/ioctl.h>
-#include "OPI_IMU.h"
-#include <wiringPiI2C.h>
 
-extern "C"{
-#include <wiringPi.h>
-}
+#include "OPI_IMU.hpp"
 
+#define I2C_SLAVE   0x0703
+#define I2C_SMBUS   0x0720  /* SMBus-level access */
 
-
-#define I2C_SLAVE	0x0703
-#define I2C_SMBUS	0x0720	/* SMBus-level access */
-
-#define I2C_SMBUS_READ	1
-#define I2C_SMBUS_WRITE	0
+#define I2C_SMBUS_READ  1
+#define I2C_SMBUS_WRITE 0
 
 // SMBus transaction types
 
-#define I2C_SMBUS_QUICK		    0
-#define I2C_SMBUS_BYTE		    1
-#define I2C_SMBUS_BYTE_DATA	    2 
-#define I2C_SMBUS_WORD_DATA	    3
-#define I2C_SMBUS_PROC_CALL	    4
-#define I2C_SMBUS_BLOCK_DATA	    5
+#define I2C_SMBUS_QUICK         0
+#define I2C_SMBUS_BYTE          1
+#define I2C_SMBUS_BYTE_DATA     2 
+#define I2C_SMBUS_WORD_DATA     3
+#define I2C_SMBUS_PROC_CALL     4
+#define I2C_SMBUS_BLOCK_DATA        5
 #define I2C_SMBUS_I2C_BLOCK_BROKEN  6
-#define I2C_SMBUS_BLOCK_PROC_CALL   7		/* SMBus 2.0 */
+#define I2C_SMBUS_BLOCK_PROC_CALL   7       /* SMBus 2.0 */
 #define I2C_SMBUS_I2C_BLOCK_DATA    8
 
 // SMBus messages
 
-#define I2C_SMBUS_BLOCK_MAX	32	/* As specified in SMBus standard */	
-#define I2C_SMBUS_I2C_BLOCK_MAX	32	/* Not specified but we use same structure */
+#define I2C_SMBUS_BLOCK_MAX 32  /* As specified in SMBus standard */    
+#define I2C_SMBUS_I2C_BLOCK_MAX 32  /* Not specified but we use same structure */
 
+//Gyro gains by FSR setting
+// #define GYRO_GAIN (4.375/1000.0) // 125 DPS FSR
+#define GYRO_GAIN (8.75/1000.0)  // 250 DPS FSR
+// #define GYRO_GAIN (17.5/1000.0)  // 500 DPS FSR
+// #define GYRO_GAIN (35/1000.0)    // 1000 DPS FSR
+// #define GYRO_GAIN (70.0/1000.0)  // 2000 DPS FSR
 
 // Structures used in the ioctl() calls
 union i2c_smbus_data
 {
   uint8_t  byte ;
   uint16_t word ;
-  uint8_t  block [I2C_SMBUS_BLOCK_MAX + 2] ;	// block [0] is used for length + one more for PEC
+  uint8_t  block [I2C_SMBUS_BLOCK_MAX + 2] ;    // block [0] is used for length + one more for PEC
 } ;
 
 struct i2c_smbus_ioctl_data
@@ -78,6 +76,7 @@ struct i2c_smbus_ioctl_data
 } ;
 
 void OPI_IMU::OPI_IMU_Setup(){
+    ref_pressure_found = true;
     const char *device;
     device = "/dev/i2c-3"; 
 
@@ -88,6 +87,12 @@ void OPI_IMU::OPI_IMU_Setup(){
     wiringPiI2CWriteReg8(LSM6DSL, LSM6DSL_CTRL1_XL, 0b10011111);
     wiringPiI2CWriteReg8(LSM6DSL, LSM6DSL_CTRL8_XL, 0b11001000);
     wiringPiI2CWriteReg8(LSM6DSL, LSM6DSL_CTRL3_C, 0b01000100);
+
+    //Uncomment desired gyro ODR/FSR setting
+    // wiringPiI2CWriteReg8(LSM6DSL, LSM6DSL_CTRL2_G, 0b01000010); //104Hz ODR, 125 DPS FSR
+    wiringPiI2CWriteReg8(LSM6DSL, LSM6DSL_CTRL2_G, 0b01000000); //104Hz ODR, 250 DPS FSR
+    // wiringPiI2CWriteReg8(LSM6DSL, LSM6DSL_CTRL2_G, 0b10011100); //3.3kHz ODR, 2000 DPS FSR
+
     wiringPiI2CWriteReg8(LSM6DSL, LSM6DSL_CTRL2_G, 0b10011100);
 
     wiringPiI2CWriteReg8(LIS3MDL, LIS3MDL_CTRL_REG1, 0b11011100);     // Temp sesnor enabled, High performance, ODR 80 Hz, FAST ODR disabled and Selft test disabled.
@@ -100,42 +105,40 @@ void OPI_IMU::OPI_IMU_Setup(){
     wiringPiI2CWriteReg8(BM388,CONFIG, 0b00000110);      // IIR filter coefficient of 63 
 
     //Loading the calibration values
-	int out = wiringPiI2CReadRegBlock(BM388, NVM_PAR_T1_LSB, 21, buff_calib); 
-	if (out == -1) {
-		printf("BM388 I2C not working\n");
-	}
-	float NVM_PAR_T1_val = (uint16_t)(buff_calib[0] | (buff_calib[1] << 8));
-	float NVM_PAR_T2_val = (uint16_t)(buff_calib[2] | (buff_calib[3] << 8));
-	float NVM_PAR_T3_val = (int8_t)buff_calib[4];
-	float NVM_PAR_P1_val = (int16_t)(buff_calib[5] | (buff_calib[6] << 8));
-	float NVM_PAR_P2_val = (int16_t)(buff_calib[7] | (buff_calib[8] << 8));
-	float NVM_PAR_P3_val = (int8_t)buff_calib[9];
-	float NVM_PAR_P4_val = (int8_t)buff_calib[10];
-	float NVM_PAR_P5_val = (uint16_t)(buff_calib[11] | (buff_calib[12] << 8));
-	float NVM_PAR_P6_val = (uint16_t)(buff_calib[13] | (buff_calib[14] << 8));
-	float NVM_PAR_P7_val = (int8_t)buff_calib[15];
-	float NVM_PAR_P8_val = (int8_t)buff_calib[16];
-	float NVM_PAR_P9_val = (int16_t)(buff_calib[17] | (buff_calib[18] << 8));
-	float NVM_PAR_P10_val = (int8_t)buff_calib[19];
-	float NVM_PAR_P11_val = (int8_t)buff_calib[20];
+    int out = wiringPiI2CReadRegBlock(BM388, NVM_PAR_T1_LSB, 21, buff_calib); 
+    if (out == -1) {
+        printf("BM388 I2C not working\n");
+    }
+    float NVM_PAR_T1_val = (uint16_t)(buff_calib[0] | (buff_calib[1] << 8));
+    float NVM_PAR_T2_val = (uint16_t)(buff_calib[2] | (buff_calib[3] << 8));
+    float NVM_PAR_T3_val = (int8_t)buff_calib[4];
+    float NVM_PAR_P1_val = (int16_t)(buff_calib[5] | (buff_calib[6] << 8));
+    float NVM_PAR_P2_val = (int16_t)(buff_calib[7] | (buff_calib[8] << 8));
+    float NVM_PAR_P3_val = (int8_t)buff_calib[9];
+    float NVM_PAR_P4_val = (int8_t)buff_calib[10];
+    float NVM_PAR_P5_val = (uint16_t)(buff_calib[11] | (buff_calib[12] << 8));
+    float NVM_PAR_P6_val = (uint16_t)(buff_calib[13] | (buff_calib[14] << 8));
+    float NVM_PAR_P7_val = (int8_t)buff_calib[15];
+    float NVM_PAR_P8_val = (int8_t)buff_calib[16];
+    float NVM_PAR_P9_val = (int16_t)(buff_calib[17] | (buff_calib[18] << 8));
+    float NVM_PAR_P10_val = (int8_t)buff_calib[19];
+    float NVM_PAR_P11_val = (int8_t)buff_calib[20];
 
-	//Floating point compensation
-	PAR_T1 = NVM_PAR_T1_val / pow(2, -8);
-	PAR_T2 = NVM_PAR_T2_val / pow(2, 30);
-	PAR_T3 = NVM_PAR_T3_val / pow(2, 48);
-	PAR_P1 = (NVM_PAR_P1_val - pow(2, 14)) / pow(2, 20);
-	PAR_P2 = (NVM_PAR_P2_val - pow(2, 14)) / pow(2, 29);
-	PAR_P3 = NVM_PAR_P3_val / pow(2, 32);
-	PAR_P4 = NVM_PAR_P4_val / pow(2, 37);
-	PAR_P5 = NVM_PAR_P5_val / pow(2, -3);
-	PAR_P6 = NVM_PAR_P6_val / pow(2, 6);
-	PAR_P7 = NVM_PAR_P7_val / pow(2, 8);
-	PAR_P8 = NVM_PAR_P8_val / pow(2, 15);
-	PAR_P9 = NVM_PAR_P9_val / pow(2, 48);
-	PAR_P10 = NVM_PAR_P10_val / pow(2, 48);
-	PAR_P11 = NVM_PAR_P11_val / pow(2, 65);
-
-
+    //Floating point compensation
+    PAR_T1 = NVM_PAR_T1_val / pow(2, -8);
+    PAR_T2 = NVM_PAR_T2_val / pow(2, 30);
+    PAR_T3 = NVM_PAR_T3_val / pow(2, 48);
+    PAR_P1 = (NVM_PAR_P1_val - pow(2, 14)) / pow(2, 20);
+    PAR_P2 = (NVM_PAR_P2_val - pow(2, 14)) / pow(2, 29);
+    PAR_P3 = NVM_PAR_P3_val / pow(2, 32);
+    PAR_P4 = NVM_PAR_P4_val / pow(2, 37);
+    PAR_P5 = NVM_PAR_P5_val / pow(2, -3);
+    PAR_P6 = NVM_PAR_P6_val / pow(2, 6);
+    PAR_P7 = NVM_PAR_P7_val / pow(2, 8);
+    PAR_P8 = NVM_PAR_P8_val / pow(2, 15);
+    PAR_P9 = NVM_PAR_P9_val / pow(2, 48);
+    PAR_P10 = NVM_PAR_P10_val / pow(2, 48);
+    PAR_P11 = NVM_PAR_P11_val / pow(2, 65);
 }
 
 void OPI_IMU::IMU_read(){
@@ -173,7 +176,6 @@ void OPI_IMU::IMU_read(){
     MagXraw = -magRaw[1];
     MagZraw = magRaw[2];
 
-
     //Gyroscope Output
     out = wiringPiI2CReadRegBlock(LSM6DSL, LSM6DSL_OUT_X_L_G, 6, buff); 
     if (out == -1) {
@@ -187,14 +189,16 @@ void OPI_IMU::IMU_read(){
     if (gyrRaw[2] >= 32768) gyrRaw[2] = gyrRaw[2] - 65536;
 
     //Convert Gyro raw to degrees per second updated (deg/s)
-    gyr_rateYraw = (gyrRaw[0] * 70) / 1000.0;
-    gyr_rateXraw = -(gyrRaw[1] * 70) / 1000.0;
-    gyr_rateZraw = (gyrRaw[2] * 70) / 1000.0;
-    
+    gyr_rateYraw =  (double)gyrRaw[0] * GYRO_GAIN;
+    gyr_rateXraw = -(double)gyrRaw[1] * GYRO_GAIN;
+    gyr_rateZraw =  (double)gyrRaw[2] * GYRO_GAIN;
+    //---------------------------------------------------------------------------------------
+}
 
+void OPI_IMU::baro_read() {
     //Barometer and Temperature Sensor Output
     //Starts with the PRESS_XLSB_7_0 output register then will read the remainig five
-    out = wiringPiI2CReadRegBlock(BM388, PRESS_XLSB_7_0, 6, buff); 
+    int out = wiringPiI2CReadRegBlock(BM388, PRESS_XLSB_7_0, 6, buff); 
     if (out == -1) {
         printf("BM388 PRESS_XLSB_7_0 I2C not working\n");
     }
@@ -221,8 +225,6 @@ void OPI_IMU::IMU_read(){
     alt = 44330 * (1 - pow((comp_press / ref_ground_press), (1 / 5.255))); //In meters
 
     // alt = comp_press;  // plus something from base station
-
-    //---------------------------------------------------------------------------------------
 }
 
 void OPI_IMU::IMU_ROTATION(float rotation_angle){  //current: 180 degrees z axis rotation
@@ -293,16 +295,16 @@ static inline int i2c_smbus_access_bl (int fd, char rw, uint8_t command, int siz
   return ioctl (fd, I2C_SMBUS, &args) ;
 }
 
-int OPI_IMU::wiringPiI2CReadRegBlock (int fd, int reg, int num_bytes, uint8_t *buff)
+int OPI_IMU::wiringPiI2CReadRegBlock(int fd, int reg, int num_bytes, uint8_t *buff)
 {
-  union i2c_smbus_data data;
-  if (i2c_smbus_access_bl (fd, I2C_SMBUS_READ, reg, 6, &data))
-    return -1 ;
-  else
-	for (int i = 0; i < num_bytes; i++) {
-		buff[i] = data.block[i + 1];
-	}
-    return data.block[0]; //first element is length of block array
+    union i2c_smbus_data data;
+    if (i2c_smbus_access_bl (fd, I2C_SMBUS_READ, reg, 6, &data)) {
+        return -1;
+    } else {
+        for (int i = 0; i < num_bytes; i++) {
+            buff[i] = data.block[i + 1];
+        }
+
+        return data.block[0]; //first element is length of block array
+    }
 }
-
-
