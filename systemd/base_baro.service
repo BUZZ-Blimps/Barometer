@@ -1,0 +1,14 @@
+[Unit]
+Description=Base barometer service
+Requires=network.target
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/home/opi/scripts/base_baro.sh
+User=root
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
