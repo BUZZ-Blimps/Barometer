@@ -78,7 +78,7 @@ struct i2c_smbus_ioctl_data
 void OPI_IMU::OPI_IMU_Setup(){
     ref_pressure_found = true;
     const char *device;
-    device = "/dev/i2c-5"; //WDW: Changed for base barometer
+    device = "/dev/i2c-3";
 
     LIS3MDL = wiringPiI2CSetupInterface(device, LIS3MDL_ADDRESS);
     LSM6DSL = wiringPiI2CSetupInterface(device, LSM6DSL_ADDRESS);
