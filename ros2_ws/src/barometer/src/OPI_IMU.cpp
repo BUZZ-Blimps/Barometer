@@ -59,6 +59,9 @@ To save an ssh password for Orange Pi number #: ssh-copy-id opi@opi#
 // #define GYRO_GAIN (35/1000.0)    // 1000 DPS FSR
 // #define GYRO_GAIN (70.0/1000.0)  // 2000 DPS FSR
 
+#define ACC_GAIN (0.122/1000.0) //4 m/s^2
+// #define ACC_GAIN (0.244/1000.0) //8 m/s^2
+
 // Structures used in the ioctl() calls
 union i2c_smbus_data
 {
@@ -75,40 +78,50 @@ struct i2c_smbus_ioctl_data
   union i2c_smbus_data *data ;
 } ;
 
-void OPI_IMU::OPI_IMU_Setup(){
+void OPI_IMU::OPI_IMU_Setup() {
     ref_pressure_found = true;
     const char *device;
-    device = "/dev/i2c-3";
+    device = "/dev/i2c-3"; 
 
     LIS3MDL = wiringPiI2CSetupInterface(device, LIS3MDL_ADDRESS);
     LSM6DSL = wiringPiI2CSetupInterface(device, LSM6DSL_ADDRESS);
     BM388 = wiringPiI2CSetupInterface(device, BM388_ADDRESS);
 
-    wiringPiI2CWriteReg8(LSM6DSL, LSM6DSL_CTRL1_XL, 0b10011111);
+    //Accelerometer config
+    // wiringPiI2CWriteReg8(LSM6DSL, LSM6DSL_CTRL1_XL, 0b10011111); //3.3kHz, 
+    // wiringPiI2CWriteReg8(LSM6DSL, LSM6DSL_CTRL1_XL, 0b01001111); //104 Hz 
+    wiringPiI2CWriteReg8(LSM6DSL, LSM6DSL_CTRL1_XL, 0b01001000);    //104 Hz, +/- 4G,
     wiringPiI2CWriteReg8(LSM6DSL, LSM6DSL_CTRL8_XL, 0b11001000);
-    wiringPiI2CWriteReg8(LSM6DSL, LSM6DSL_CTRL3_C, 0b01000100);
+    wiringPiI2CWriteReg8(LSM6DSL, LSM6DSL_CTRL3_C,  0b01000100);
 
+    //Gyro config
     //Uncomment desired gyro ODR/FSR setting
     // wiringPiI2CWriteReg8(LSM6DSL, LSM6DSL_CTRL2_G, 0b01000010); //104Hz ODR, 125 DPS FSR
-    wiringPiI2CWriteReg8(LSM6DSL, LSM6DSL_CTRL2_G, 0b01000000); //104Hz ODR, 250 DPS FSR
+    wiringPiI2CWriteReg8(LSM6DSL, LSM6DSL_CTRL2_G, 0b01000000);    //104Hz ODR, 250 DPS FSR
     // wiringPiI2CWriteReg8(LSM6DSL, LSM6DSL_CTRL2_G, 0b10011100); //3.3kHz ODR, 2000 DPS FSR
 
-    wiringPiI2CWriteReg8(LSM6DSL, LSM6DSL_CTRL2_G, 0b10011100);
+    //Magnetometer config
+    wiringPiI2CWriteReg8(LIS3MDL, LIS3MDL_CTRL_REG1, 0b11011100); // Temp sesnor enabled, High performance, ODR 80 Hz, FAST ODR disabled and Selft test disabled.
+    wiringPiI2CWriteReg8(LIS3MDL, LIS3MDL_CTRL_REG2, 0b00100000); // +/- 8 gauss
+    wiringPiI2CWriteReg8(LIS3MDL, LIS3MDL_CTRL_REG3, 0b00000000);
 
-    wiringPiI2CWriteReg8(LIS3MDL, LIS3MDL_CTRL_REG1, 0b11011100);     // Temp sesnor enabled, High performance, ODR 80 Hz, FAST ODR disabled and Selft test disabled.
-    wiringPiI2CWriteReg8(LIS3MDL, LIS3MDL_CTRL_REG2, 0b00100000);     // +/- 8 gauss
-    wiringPiI2CWriteReg8(LIS3MDL, LIS3MDL_CTRL_REG3, 0b00000000); 
+    wiringPiI2CWriteReg8(BM388, PWR_CTRL, 0b00110011);  // Enables pressure sensor, Enables temperature sensor, Normal mode
+    
+    // wiringPiI2CWriteReg8(BM388, OSR,      0b00001100);  // x2 oversampling temp measurement, x16 oversampling pressure measurement
+    wiringPiI2CWriteReg8(BM388, OSR,      0b00001100);  // x32 oversampling temp measurement, x32 oversampling pressure measurement
 
-    wiringPiI2CWriteReg8(BM388,PWR_CTRL, 0b00110011);     // Enables pressure sensor, Enables temperature sensor, Normal mode
-    wiringPiI2CWriteReg8(BM388,OSR, 0b00001100);                 // x16 oversampling pressure measurement, x2 oversampling temp measurement
-    wiringPiI2CWriteReg8(BM388,ODR, 0x03);                 // Output data rate 25Hz
-    wiringPiI2CWriteReg8(BM388,CONFIG, 0b00000110);      // IIR filter coefficient of 63 
+    wiringPiI2CWriteReg8(BM388, ODR,      0x03);        // Output data rate 25Hz
 
+    // wiringPiI2CWriteReg8(BM388, CONFIG, 0b00000010);  // IIR filter coefficient of 3
+    wiringPiI2CWriteReg8(BM388, CONFIG, 0b00000110);  // IIR filter coefficient of 63
+    // wiringPiI2CWriteReg8(BM388, CONFIG,    0b00000111);  // IIR filter coefficient of 127
+    
     //Loading the calibration values
     int out = wiringPiI2CReadRegBlock(BM388, NVM_PAR_T1_LSB, 21, buff_calib); 
     if (out == -1) {
         printf("BM388 I2C not working\n");
     }
+
     float NVM_PAR_T1_val = (uint16_t)(buff_calib[0] | (buff_calib[1] << 8));
     float NVM_PAR_T2_val = (uint16_t)(buff_calib[2] | (buff_calib[3] << 8));
     float NVM_PAR_T3_val = (int8_t)buff_calib[4];
@@ -154,10 +167,10 @@ void OPI_IMU::IMU_read(){
     if (accRaw[1] >= 32768) accRaw[1] = accRaw[1] - 65536;
     if (accRaw[2] >= 32768) accRaw[2] = accRaw[2] - 65536;
 
-    AccYraw = (accRaw[0] * 0.244) / 1000.0;
-    AccXraw = -(accRaw[1] * 0.244) / 1000.0;
-    AccZraw = (accRaw[2] * 0.244) / 1000.0;
-
+    //FLU frame: 
+    AccXraw =  (accRaw[1] * ACC_GAIN);
+    AccYraw = -(accRaw[0] * ACC_GAIN);
+    AccZraw =  (accRaw[2] * ACC_GAIN);
 
     //Magnetometer Output
     out = wiringPiI2CReadRegBlock(LIS3MDL, 0x80 | LIS3MDL_OUT_X_L, 6, buff); 
@@ -172,8 +185,8 @@ void OPI_IMU::IMU_read(){
     if (magRaw[2] >= 32768) magRaw[2] = magRaw[2] - 65536;
 
     //convert?
-    MagYraw = magRaw[0];
-    MagXraw = -magRaw[1];
+    MagXraw = magRaw[1];
+    MagYraw = -magRaw[0];
     MagZraw = magRaw[2];
 
     //Gyroscope Output
@@ -189,9 +202,9 @@ void OPI_IMU::IMU_read(){
     if (gyrRaw[2] >= 32768) gyrRaw[2] = gyrRaw[2] - 65536;
 
     //Convert Gyro raw to degrees per second updated (deg/s)
-    gyr_rateYraw =  (double)gyrRaw[0] * GYRO_GAIN;
-    gyr_rateXraw = -(double)gyrRaw[1] * GYRO_GAIN;
-    gyr_rateZraw =  (double)gyrRaw[2] * GYRO_GAIN;
+    gyr_rateXraw = (double)gyrRaw[1] * GYRO_GAIN;
+    gyr_rateYraw = -(double)gyrRaw[0] * GYRO_GAIN;
+    gyr_rateZraw = (double)gyrRaw[2] * GYRO_GAIN;
     //---------------------------------------------------------------------------------------
 }
 
@@ -218,11 +231,11 @@ void OPI_IMU::baro_read() {
     //Altitude (in meters)
     //https://www.circuitbasics.com/set-bmp180-barometric-pressure-sensor-arduino/
     //Sets the reference pressure (therefore setting the reference height)
-    if(ref_pressure_found){
-        ref_ground_press = comp_press;
-        ref_pressure_found = false;
-    }
-    alt = 44330 * (1 - pow((comp_press / ref_ground_press), (1 / 5.255))); //In meters
+    // if(ref_pressure_found){
+    //     ref_ground_press = comp_press;
+    //     ref_pressure_found = false;
+    // }
+    // alt = 44330 * (1 - pow((comp_press / ref_ground_press), (1 / 5.255))); //In meters
 
     // alt = comp_press;  // plus something from base station
 }

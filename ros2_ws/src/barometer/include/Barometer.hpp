@@ -24,10 +24,10 @@ public:
     Barometer();
 
 private:
-    rclcpp::TimerBase::SharedPtr timer_;
-    rclcpp::Publisher<std_msgs::msg::Float64>:: SharedPtr publisher_;
+    rclcpp::TimerBase::SharedPtr baro_timer_;
+    rclcpp::Publisher<std_msgs::msg::Float64>:: SharedPtr baro_publisher_, temp_publisher_;
 
-    std_msgs::msg::Float64 baro_msg_;
+    std_msgs::msg::Float64 baro_msg_, temp_msg_;
 
     OPI_IMU imu_;
     size_t count_;
